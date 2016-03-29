@@ -1,18 +1,57 @@
 <html>
 	<head>
+		<title>
+			"Michael Wright's coding challenge";
+		</title>
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
-    <script>
+    <script> 
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
-      };
+		
+
+		function loadMessage(loadGeeMails) {
+		for (var i = 0; i < message.value; i++){
+			document.getElementByTagName(windows.geemails).innerHTML;
+    		document.getElementByTagNamet(generateNewMessage).innerHTML;
+    			}
+		function viewMessage(loadGeeMails) {
+		for (var i = 0; i < message.value; i++){
+		return document.getElementByTagName(windows.geemails).onclick;
+		return document.getElementByTagName(generateNewMessage).onclick;	
+			}
+			
+		var qty= 0;
+		
+		function modify_qty(value) {
+			qty = qty + value;
+			return qty
+			if (qty<0) {
+			qty=0;
+						}
+				}
+
+
+		function checkForMail(0) {
+			setInterval(getNewMessage, 1000);
+		}
+
+
+
+
+		}
+
+
+    };
     </script>
 	</head>
 	<body>
 		<div class="container" id="main">
-			Build Me!
+			<input id="qty" value="0" />
+			<label for="qty">Messages</label>
 		</div>
+
+
 	</body>
 </html>
