@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <html>
 	<head>
 		<title>
@@ -9,16 +11,33 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-		
+		function loadMail(loadGeeMails) {
+			for(var i = 0; i<loadGeeMails.length; i++){
+			console.log(loadGeeMails[i]); 
 
-		function loadMessage(loadGeeMails) {
-		for (var i = 0; i < message.value; i++){
-			document.getElementByTagName(windows.geemails).innerHTML;
-    		document.getElementByTagNamet(generateNewMessage).innerHTML;
-    			}
+			var createEmail =
+			document.createElement("div");
+			document.getElementById("main").appendChild(createEmail);
+
+			var loadSender = 
+			document.createElement("div");
+			loadSender.innerHTML = 'sender: ' + loadGeeMails[i].sender;
+			createEmail.appendChild(loadSender);
+
+			var loadSubject = 
+			document.createElement("div");
+			loadSubject.innerHTML = 'subject: ' + loadGeeMails[i].subject;
+			createEmail.appendChild(loadSubject);
+		
+			getRandomDate();
+		}
+
+			loadMail(loadGeeMails);
+
+		
 		function viewMessage(loadGeeMails) {
 		for (var i = 0; i < message.value; i++){
-		return document.getElementByTagName(windows.geemails).onclick;
+		return document.getElementByTagName(geemails).onclick;
 		return document.getElementByTagName(generateNewMessage).onclick;	
 			}
 			
@@ -38,8 +57,6 @@
 		}
 
 
-
-
 		}
 
 
@@ -49,7 +66,7 @@
 	<body>
 		<div class="container" id="main">
 			<input id="qty" value="0" />
-			<label for="qty">Messages</label>
+			<label for="qty">Inbox Count</label>
 		</div>
 
 
