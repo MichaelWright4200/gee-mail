@@ -13,21 +13,29 @@
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
 		function loadMail(loadGeeMails) {
 			for(var i = 0; i<loadGeeMails.length; i++){
-			console.log(loadGeeMails[i]); 
+			//console.log(geemails[i].subject);
+			//console.log(geemails[i].sender);
+			//console.log(geemails[i].body);
 
 			var createEmail =
 			document.createElement("div");
-			document.getElementById("main").appendChild(createEmail);
+			document.getElementsByClassName("container");
+			createEmail.className = "geemails";
+			main.appendChild(createEmail);
+
 
 			var loadSender = 
 			document.createElement("div");
-			loadSender.innerHTML = 'sender: ' + loadGeeMails[i].sender;
+			loadSender.className = sender;
+			loadSender.innerHTML = geemails[i].sender;
 			createEmail.appendChild(loadSender);
 
 			var loadSubject = 
 			document.createElement("div");
-			loadSubject.innerHTML = 'subject: ' + loadGeeMails[i].subject;
+			loadDubject.className = subject;
+			loadSubject.innerHTML = geemails[i].subject;
 			createEmail.appendChild(loadSubject);
+
 		
 			getRandomDate();
 		}
@@ -37,8 +45,15 @@
 		
 		function viewMessage(loadGeeMails) {
 		for (var i = 0; i < message.value; i++){
-		return document.getElementByTagName(geemails).onclick;
+		return document.getElementByTagName(loadMail).onclick;
 		return document.getElementByTagName(generateNewMessage).onclick;	
+		return document.getElementByTagName(loadBody).onclick;
+		var loadBody = 
+			document.createElement("div");
+			loadBody.className = body;
+			loadBody.innerHTML = geemails[i].body;
+			viewMessage.appendChild(loadBody);
+			
 			}
 			
 		var qty= 0;
