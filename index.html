@@ -8,17 +8,28 @@
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script> 
-      window.onload = function(){
+      window.onload = function() {
+
+      		function loadEmail(messages) {
+      			for(var i = 0; i<messages.length; i++) {
+      				console.log(messages[i]);
+      				console.log(messages[i].sender);
+      				console.log(messages[i].subject);
+
+      			}
+      		}
+      		loadEmail(geemails);
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-		function loadMail(loadGeeMails) {
-			for(var i = 0; i<loadGeeMails.length; i++){
-			//console.log(geemails[i].subject);
-			//console.log(geemails[i].sender);
-			//console.log(geemails[i].body);
-
-			var createEmail =
-			document.createElement("div");
+		function loadMail (messages){
+			for (var i = 0; i<messages.length; i++){
+			console.log(messages[i]);
+			console.log(messages[i].sender);
+			console.log(messages[i].subject);
+			console.log(messages[i].body);
+			console.log(messages[i].date);
+			
+			var createEmail = document.createElement("div");
 			document.getElementsByClassName("container");
 			createEmail.className = "geemails";
 			main.appendChild(createEmail);
@@ -26,53 +37,53 @@
 
 			var loadSender = 
 			document.createElement("div");
-			loadSender.className = sender;
+			loadSender.className = "sender";
 			loadSender.innerHTML = geemails[i].sender;
 			createEmail.appendChild(loadSender);
 
 			var loadSubject = 
 			document.createElement("div");
-			loadDubject.className = subject;
+			loadSubject.className = "subject";
 			loadSubject.innerHTML = geemails[i].subject;
 			createEmail.appendChild(loadSubject);
-
-		
-			getRandomDate();
-		}
-
-			loadMail(loadGeeMails);
-
-		
-		function viewMessage(loadGeeMails) {
-		for (var i = 0; i < message.value; i++){
-		return document.getElementByTagName(loadMail).onclick;
-		return document.getElementByTagName(generateNewMessage).onclick;	
-		return document.getElementByTagName(loadBody).onclick;
-		var loadBody = 
+	
+			var loadBody = 
 			document.createElement("div");
-			loadBody.className = body;
+			loadBody.className = "body";
 			loadBody.innerHTML = geemails[i].body;
-			viewMessage.appendChild(loadBody);
+			createEmail.appendChild(loadBody);
+
+
+		}
+
+	}
+
+
+			loadMail(geemails);
+
 			
-			}
-			
-		var qty= 0;
 		
-		function modify_qty(value) {
-			qty = qty + value;
-			return qty
-			if (qty<0) {
-			qty=0;
-						}
-				}
+		function viewMessage(message) {
+		for (var i = 0; i < message.length; i++) {}
+	}
+		
+
+			
+		// function modifyQty(value) {
+		// 	var qty = 0;
+		// 	if (qty<value) {
+		// 	return qty + value;}
+		// 	else {return qty;}
+		// 			}
+		// 	console.log(modifyQty());		
+				
 
 
-		function checkForMail(0) {
-			setInterval(getNewMessage, 1000);
-		}
-
-
-		}
+		// function checkForMail(0) {
+		// 	setInterval(getNewMessage, 1000);
+		// }
+	
+		// console.log(checkForMail());
 
 
     };
@@ -80,7 +91,7 @@
 	</head>
 	<body>
 		<div class="container" id="main">
-			<input id="qty" value="0" />
+			<input id="qty" value="0">
 			<label for="qty">Inbox Count</label>
 		</div>
 
