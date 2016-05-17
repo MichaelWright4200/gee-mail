@@ -9,16 +9,6 @@
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script> 
       window.onload = function() {
-
-      		function loadEmail(messages) {
-      			for(var i = 0; i<messages.length; i++) {
-      				console.log(messages[i]);
-      				console.log(messages[i].sender);
-      				console.log(messages[i].subject);
-
-      			}
-      		}
-      		loadEmail(geemails);
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
 		function loadMail (messages){
@@ -53,7 +43,12 @@
 			loadBody.innerHTML = geemails[i].body;
 			createEmail.appendChild(loadBody);
 
-
+			var loadDate = 
+			document.createElement("div");
+			loadDate.className = "fakeDate";
+			loadDate.innerHTML = getRandomDate(7);
+			createEmail.appendChild(loadDate); 
+		
 		}
 
 	}
@@ -63,9 +58,10 @@
 
 			
 		
-		function viewMessage(message) {
-		for (var i = 0; i < message.length; i++) {}
-	}
+	// 	function viewMessage(message) {
+	// 		if("body" === 
+		
+	// }
 		
 
 			
@@ -79,10 +75,7 @@
 				
 
 
-		// function checkForMail(0) {
-		// 	setInterval(getNewMessage, 1000);
-		// }
-	
+		
 		// console.log(checkForMail());
 
 
@@ -92,7 +85,7 @@
 	<body>
 		<div class="container" id="main">
 			<input id="qty" value="0">
-			<label for="qty">Inbox Count</label>
+			<label for="qty">Inbox Count</style></label>
 		</div>
 
 
